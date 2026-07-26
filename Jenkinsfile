@@ -13,7 +13,7 @@ pipeline {
 
         stage('Run Lint Test') {
             steps {
-                sh 'pip3 install --break-system-packages flake8'
+                sh 'pip install --break-system-packages flake8'
                 sh 'flake8 . || true'
                   }
             }
