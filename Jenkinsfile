@@ -19,7 +19,9 @@ pipeline {
 
         stage('Deploy to Stage') {
             steps {
-                sh 'docker run -d -p 5000:5000 $IMAGE_NAME:$BUILD_NUMBER'
+                sh 'docker stop flask-notes-app || true'
+                sh 'docker rm flask-notes-app || true'
+                sh 'docker run -d --name flask-notes-app -p 5000:5000 $IMAGE_NAME:$BUILD_NUMBER'
             }
         }
     }
