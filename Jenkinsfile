@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/theshubhamgour/flask-portfolio.git'
+                git 'https://github.com/iamjoydip06/cicd-with-python-flask-app.git'
             }
         }
 
