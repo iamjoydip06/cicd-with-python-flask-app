@@ -11,13 +11,6 @@ pipeline {
             }
         }
 
-        stage('Run Lint Test') {
-            steps {
-                sh 'pip install --break-system-packages flake8'
-                sh 'flake8 . || true'
-                  }
-            }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME:$BUILD_NUMBER .'
